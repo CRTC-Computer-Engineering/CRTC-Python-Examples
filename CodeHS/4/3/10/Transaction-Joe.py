@@ -2,10 +2,10 @@
 This program made by Joe
 """
 total_balance = 1000
-min_bank = -0
-codehs_compiler_cant_underrstand_loops = 0
+min_bank = 0
+loop_overun_protection = 0
 
-while codehs_compiler_cant_underrstand_loops < 20:
+while loop_overun_protection < 20:
     user_input = input("deposit or withdrawal? ")
     if user_input == "deposit":
         print("Your current balance is $" + str(total_balance))
@@ -21,4 +21,4 @@ while codehs_compiler_cant_underrstand_loops < 20:
         print("Your current balance is now $" + str(total_balance))
     else:
         print("Invalid transaction")
-    codehs_compiler_cant_underrstand_loops = codehs_compiler_cant_underrstand_loops + 1
+    loop_overun_protection = loop_overun_protection + 1
