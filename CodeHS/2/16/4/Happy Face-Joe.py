@@ -57,4 +57,4 @@ def drawSmile(happy, headcolor, headsize):
         print("Error in input, expected 'happy' or 'sad'")
         print(happy)
 
-drawSmile(input("Input your mood, supported inputs are: happy and sad:"), "Yellow", 80)
+drawSmile(input("Input your mood, supported inputs are: happy, sad:"), "Yellow", 80)
