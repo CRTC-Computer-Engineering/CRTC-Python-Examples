@@ -1,15 +1,21 @@
-def drawCube(side_len):
+numCircles = 8
+circleSize = 20
+
+speed(0)
+def make_caterpillar_cell(color_choice, m_size):
     pendown()
-    for i in range(16): # 16 beacuse codehs is dumb
-        forward(side_len)
-        left(90)
+    begin_fill()
+    color(color_choice)
+    circle(m_size)
+    end_fill()
     penup()
+    advance_to_next(m_size)
+    
+def advance_to_next(m_size):
+    penup()
+    forward(m_size * 2)
     
 penup()
-setposition(-200, -200)
-for i in range(4):
-    square_length = input("Enter square size: ")
-    drawCube(square_length)
-    forward(400)
-    left(90)
-print("Done!")
+setposition(-100, 0)
+for i in range(numCircles):
+    make_caterpillar_cell(input("Color for cell " + str(i + 1) + ": "), circleSize)
