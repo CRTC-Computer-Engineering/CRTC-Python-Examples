@@ -1,0 +1,15 @@
+speed(5)
+penup()
+setposition(-140, 0)
+pendown()
+def caterpillar(color_choice):
+    color(color_choice)
+    begin_fill()
+    circle(20)
+    end_fill()
+    penup()
+    forward(40)
+    pendown()   
+for i in range(8):
+    color_choice=input("Pick a color: ")
+    caterpillar(color_choice)
