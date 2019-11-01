@@ -1,0 +1,20 @@
+speed(0)
+penup()
+setposition(0,-200)
+radius=int(input("Radius of bottom snowball?: "))
+def make_snowman(radius):
+    color("gray")
+    make_circle(1)
+    nav(2)
+    make_circle(2)
+    nav(1)
+    make_circle(4)
+def nav(mult):
+    left(90)
+    forward(radius * mult)
+    right(90)
+def make_circle(div):
+    begin_fill()
+    circle(radius / div)
+    end_fill()
+make_snowman(radius)
