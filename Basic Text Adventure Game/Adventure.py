@@ -32,16 +32,36 @@ if __name__ == "__main__":
         if (lev.distance(user_arg_1, "LOOK")) < select_edits:
             if (lev.distance(user_arg_2, "LEFT")) < select_edits:
                 selected_direction = 'left'
-                print(current_room['left']['desc'])
+                try:
+                    print(current_room['left']['desc'])
+                except:
+                    print("There is nothing notible to your left")
+                    
             elif (lev.distance(user_arg_2, "RIGHT")) < select_edits:
                 selected_direction = 'right'
-                print(current_room['right']['desc'])
+                try:
+                    print(current_room['right']['desc'])
+                except:
+                    print("There is nothing notible to your right")
+                    
             elif (lev.distance(user_arg_2, "AHEAD")) < select_edits or (lev.distance(user_arg_1, "FORWARD")) < select_edits:
                 selected_direction = 'ahead'
-                print(current_room['ahead']['desc'])
+                try:
+                    print(current_room['ahead']['desc'])
+                except:
+                    print("There is nothing ahead of you")
+                
             elif (lev.distance(user_arg_2, "BEHIND")) < select_edits or (lev.distance(user_arg_1, "BACK")) < select_edits:
                 selected_direction = 'behind'
-                print(current_room['behind']['desc'])
+                try:
+                    print(current_room['behind']['desc'])
+                except:
+                    print("Missing Data")
+        elif (lev.distance(user_arg_1, "WHERE")) < select_edits or (lev.distance(user_arg_1, "MAP")) < select_edits:
+            try:
+                print(current_room[selected_direction])
+            except:
+                print("Choose a direction")
         elif (lev.distance(user_arg_1, "INSPECT")) < select_edits or (lev.distance(user_arg_1, "EXAMINE")) < select_edits:
             print(current_room[selected_direction][user_arg_2.lower()]['inspect'])
         elif (lev.distance(user_arg_1, "PICKUP")) < select_edits or (lev.distance(user_arg_1, "GRAB")) < select_edits:
