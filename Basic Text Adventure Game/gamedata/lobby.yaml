@@ -1,0 +1,30 @@
+roommeta:
+    desc: "Welcome to the first room of the game! Thanks so much for playing."
+    inspect: "Its a simple blue room"
+items:
+    blueKey:
+        name: "A Blue Key"
+        inspect: "The key is small and looks new"
+    gameManual:
+        name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
+        inspect: "This manual is almost useful for nothing!"
+left:
+    desc: "You see a simple wooden door and a small blue key on the floor."
+    item:
+        blueKey: 1
+    door:
+        inspect: "A simple wooden door, you're not sure where it leads"
+        dest: "Nowhere"
+right:
+    desc: "You see a simple wooden door and nothing else."
+    door: 
+        inspect: "A simple wooden door, you're not sure where it leads"
+        dest: "It apears this door leads to newroom"
+        path: "gamedata/newroom.yaml"
+behind:
+    desc: "There is nothing behind you but wall"
+ahead:
+    desc: "You see a simple wooden door and nothing else."
+    door: 
+        inspect: "A simple wooden door, you're not sure where it leads"
+        dest: "Nowhere"
