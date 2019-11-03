@@ -84,4 +84,4 @@ if __name__ == "__main__":
             else:
                 print("This is not a door")
         else:
-            print("I did not understand")
+            print("Thats not something I understand")
