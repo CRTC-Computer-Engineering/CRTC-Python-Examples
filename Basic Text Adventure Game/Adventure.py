@@ -28,25 +28,29 @@ def save_data(filepath, data):
     with open(filepath, "w") as file_desc:
         yaml.dump(data, file_desc)
     
-def save_userdata(data_type, data):
-    print(current_user)
-    if current_user == "":
-        print("Error, you must create a user")
-    else:
-        current_user_data = enter_room(current_user)
-        current_user_data.update([data_type][data])
-        save_data(current_user, current_user_data)
-        
 def main_menu():
     print("Welcome to the main menu\n[N] to start a new game, [L] to load an old one.")
     menu_input = (input(": ")).upper()
     if menu_input == "N":
         menu_username = input("Input your name: ")
+        global current_user
         current_user = "saves/" + menu_username + ".yaml"
         print(current_user)
         save_userdata("name", menu_username)
     elif menu_input == "L":
         print("Feature not functional")
+
+def save_userdata(data_type, data):
+    print(current_user)
+    if current_user == "":
+        print("Error, you must create a user")
+    else:
+        userfile = open(current_user, "w")
+        userfile.close()
+        current_user_data = enter_room(current_user)
+        current_user_data.update([data_type][data])
+        save_data(current_user, current_user_data)
+       
 
 if __name__ == "__main__": # If this is the main file
     current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room 
