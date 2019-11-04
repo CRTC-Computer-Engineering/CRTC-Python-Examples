@@ -35,13 +35,11 @@ def main_menu():
         menu_username = input("Input your name: ")
         global current_user
         current_user = "saves/" + menu_username + ".yaml"
-        print(current_user)
         save_userdata("name", menu_username)
     elif menu_input == "L":
         print("Feature not functional")
 
 def save_userdata(data_type, data):
-    print(current_user)
     if current_user == "":
         print("Error, you must create a user")
     else:
