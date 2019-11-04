@@ -29,27 +29,35 @@ def save_data(filepath, data):
         yaml.dump(data, file_desc)
     
 def main_menu():
-    print("Welcome to the main menu\n[N] to start a new game, [L] to load an old one.")
-    menu_input = (input(": ")).upper()
-    if menu_input == "N":
-        menu_username = input("Input your name: ")
-        global current_user
-        current_user = "saves/" + menu_username + ".yaml"
-        save_userdata("name", menu_username)
-    elif menu_input == "L":
-        print("Feature not functional")
+    while(True):
+        print("Welcome to the main menu\n[N] to start a new game, [L] to load an old one.")
+        menu_input = (input(":")).upper() # Get the menu input and make it uppercase
+        if menu_input == "N": # if the input is N
+            menu_username = input("Input your name: ") # Ask for name
+            global current_user # tell python that we're using the global instance of current_user
+            current_user = "saves/" + menu_username + ".yaml" # Set the user to the user's file location
+            save_userdata("name", menu_username)
+            break
+        elif menu_input == "L":
+            print("Feature not functional")
+        else:
+            print("I did not understand that")
 
 def save_userdata(data_type, data):
     if current_user == "":
         print("Error, you must create a user")
     else:
-        userfile = open(current_user, "w")
-        userfile.write("name:")
-        userfile.close()
-        current_user_data = enter_room(current_user)
-        current_user_data.update({data_type: data})
-        save_data(current_user, current_user_data)
-       
+        try:
+            current_user_data = enter_room(current_user)
+            current_user_data.update({data_type: data})
+            save_data(current_user, current_user_data)
+        except:
+            userfile = open(current_user, "w")
+            userfile.write("name:")
+            userfile.close()
+            current_user_data = enter_room(current_user)
+            current_user_data.update({data_type: data})
+            save_data(current_user, current_user_data)
 
 if __name__ == "__main__": # If this is the main file
     current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room 
@@ -96,13 +104,20 @@ if __name__ == "__main__": # If this is the main file
             try:
                 print(current_room[selected_direction])
             except:
-                print("Choose a direction")
+                print("Even i dont know where you are")
         elif (fuzzy_words(user_arg_1, ["INSPECT", "EXAMINE"])):
-            print(current_room[selected_direction][user_arg_2.lower()]['inspect'])
-        elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB"])):
+            try:
+                print(current_room[selected_direction][user_arg_2.lower()]['inspect']) # Print the inspection text for that object
+            except:
+                print("This object cannot be inspected") # Tell the user that there is no information for that selected object
+        elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB", "TAKE"])):
             print("pickup")
         elif (fuzzy_words(user_arg_1, ["EXIT", "MENU"])):
+            save_userdata("current_room", current_yaml) # Save current room
+            save_userdata("selected_direction", selected_direction) # Save current direction
             main_menu()
+        elif (fuzzy_words(user_arg_1, ["USE"])):
+            print("use")
         elif (fuzzy_words(user_arg_1, ["OPEN"])):
             if user_arg_2 == "DOOR":
                 destination = current_room[selected_direction][user_arg_2.lower()]['dest']
@@ -119,6 +134,6 @@ if __name__ == "__main__": # If this is the main file
                 else:
                     print("This door does not lead anywhere, its a wonder somebody took the time to install it.")
             else:
-                print("This is not a door")
+                print("This is not a door or cannot be opened")
         else:
             print("Thats not something I understand")
