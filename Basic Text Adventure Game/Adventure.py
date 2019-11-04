@@ -6,6 +6,16 @@ current_yaml = "gamedata/lobby.yaml"
 
 selected_direction = ''
 
+def fuzzy_words(input_word, alisis_list):
+    output = 0
+    for word in alisis_list:
+        if ((lev.distance(input_word, word)) < select_edits):
+            output = output + 1
+    if output >= 1:
+        return True
+    else:
+        return False
+
 def enter_room(filepath):
     """Reads data from a yaml file"""
     with open(filepath, "r") as file_desc:
@@ -17,9 +27,9 @@ def save_data(filepath, data):
     with open(filepath, "w") as file_desc:
         yaml.dump(data, file_desc)
 
-if __name__ == "__main__":
-    current_room = enter_room(current_yaml)
-    print (current_room['roommeta']['desc'])
+if __name__ == "__main__": # If this is the main file
+    current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room 
+    print (current_room['roommeta']['desc']) # give us the desc of that room
     while(True):
     
         user_command = (input(":")).upper()
@@ -29,44 +39,44 @@ if __name__ == "__main__":
         except:
             user_arg_2 = ""
         
-        if (lev.distance(user_arg_1, "LOOK")) < select_edits:
-            if (lev.distance(user_arg_2, "LEFT")) < select_edits:
+        if (fuzzy_words(user_arg_1, ["LOOK"])):
+            if (fuzzy_words(user_arg_2, ["LEFT"])):
                 selected_direction = 'left'
                 try:
                     print(current_room['left']['desc'])
                 except:
                     print("There is nothing notible to your left")
                     
-            elif (lev.distance(user_arg_2, "RIGHT")) < select_edits:
+            elif (fuzzy_words(user_arg_2, ["RIGHT"])):
                 selected_direction = 'right'
                 try:
                     print(current_room['right']['desc'])
                 except:
                     print("There is nothing notible to your right")
                     
-            elif (lev.distance(user_arg_2, "AHEAD")) < select_edits or (lev.distance(user_arg_1, "FORWARD")) < select_edits:
+            elif (fuzzy_words(user_arg_2, ["AHEAD", "FORWARD"])):
                 selected_direction = 'ahead'
                 try:
                     print(current_room['ahead']['desc'])
                 except:
                     print("There is nothing ahead of you")
                 
-            elif (lev.distance(user_arg_2, "BEHIND")) < select_edits or (lev.distance(user_arg_1, "BACK")) < select_edits:
+            elif (fuzzy_words(user_arg_2, ["BEHIND", "BACK"])):
                 selected_direction = 'behind'
                 try:
                     print(current_room['behind']['desc'])
                 except:
                     print("Missing Data")
-        elif (lev.distance(user_arg_1, "WHERE")) < select_edits or (lev.distance(user_arg_1, "MAP")) < select_edits:
+        elif (fuzzy_words(user_arg_1, ["WHERE", "MAP"])):
             try:
                 print(current_room[selected_direction])
             except:
                 print("Choose a direction")
-        elif (lev.distance(user_arg_1, "INSPECT")) < select_edits or (lev.distance(user_arg_1, "EXAMINE")) < select_edits:
+        elif (fuzzy_words(user_arg_1, ["INSPECT", "EXAMINE"])):
             print(current_room[selected_direction][user_arg_2.lower()]['inspect'])
-        elif (lev.distance(user_arg_1, "PICKUP")) < select_edits or (lev.distance(user_arg_1, "GRAB")) < select_edits:
+        elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB"])):
             print("pickup")
-        elif (lev.distance(user_arg_1, "OPEN")) < select_edits:
+        elif (fuzzy_words(user_arg_1, ["OPEN"])):
             if user_arg_2 == "DOOR":
                 destination = current_room[selected_direction][user_arg_2.lower()]['dest']
                 if destination != "Nowhere":
