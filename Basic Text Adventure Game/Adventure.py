@@ -46,9 +46,10 @@ def save_userdata(data_type, data):
         print("Error, you must create a user")
     else:
         userfile = open(current_user, "w")
+        userfile.write("name:")
         userfile.close()
         current_user_data = enter_room(current_user)
-        current_user_data.update([data_type][data])
+        current_user_data.update({data_type: data})
         save_data(current_user, current_user_data)
        
 
