@@ -5,6 +5,7 @@ select_edits = 2 # How close an input has to be to match
 current_yaml = "gamedata/lobby.yaml"
 
 selected_direction = ''
+current_user = ""
 
 def fuzzy_words(input_word, alisis_list):
     output = 0
@@ -26,9 +27,30 @@ def save_data(filepath, data):
     """Dumps data to a yaml"""
     with open(filepath, "w") as file_desc:
         yaml.dump(data, file_desc)
+    
+def save_userdata(data_type, data):
+    print(current_user)
+    if current_user == "":
+        print("Error, you must create a user")
+    else:
+        current_user_data = enter_room(current_user)
+        current_user_data.update([data_type][data])
+        save_data(current_user, current_user_data)
+        
+def main_menu():
+    print("Welcome to the main menu\n[N] to start a new game, [L] to load an old one.")
+    menu_input = (input(": ")).upper()
+    if menu_input == "N":
+        menu_username = input("Input your name: ")
+        current_user = "saves/" + menu_username + ".yaml"
+        print(current_user)
+        save_userdata("name", menu_username)
+    elif menu_input == "L":
+        print("Feature not functional")
 
 if __name__ == "__main__": # If this is the main file
     current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room 
+    main_menu()
     print (current_room['roommeta']['desc']) # give us the desc of that room
     while(True):
     
@@ -76,6 +98,8 @@ if __name__ == "__main__": # If this is the main file
             print(current_room[selected_direction][user_arg_2.lower()]['inspect'])
         elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB"])):
             print("pickup")
+        elif (fuzzy_words(user_arg_1, ["EXIT", "MENU"])):
+            main_menu()
         elif (fuzzy_words(user_arg_1, ["OPEN"])):
             if user_arg_2 == "DOOR":
                 destination = current_room[selected_direction][user_arg_2.lower()]['dest']
