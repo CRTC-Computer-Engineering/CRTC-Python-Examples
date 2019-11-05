@@ -122,7 +122,7 @@ if __name__ == "__main__": # If this is the main file
             if user_arg_2 == "DOOR":
                 destination = current_room[selected_direction][user_arg_2.lower()]['dest']
                 if destination != "Nowhere":
-                    confirm = input(destination + ", would you like to enter? Y/N: ")
+                    confirm = (input(destination + ", would you like to enter? Y/N: ")).upper()
                     if confirm == "Y":
                         current_yaml = current_room[selected_direction][user_arg_2.lower()]['path']
                         current_room = enter_room(current_yaml)
