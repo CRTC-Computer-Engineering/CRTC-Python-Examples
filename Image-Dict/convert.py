@@ -5,8 +5,8 @@ pix = selected_image.load()
 width, height = selected_image.size
 output_file = open("output.txt", "a")
 output_file.write("[")
-for row in range(0, height, 4):
-    for column in range(0, width, 4):
+for row in range(0, height, 1):
+    for column in range(0, width, 1):
         red, green, blue, alpha = pix[column, row]
         print (str(red) + " " + str(green) + " " + str(blue))
         
