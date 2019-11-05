@@ -121,7 +121,11 @@ if __name__ == "__main__": # If this is the main file
             print("use")
         elif (fuzzy_words(user_arg_1, ["OPEN"])):
             if user_arg_2 == "DOOR":
-                destination = current_room[selected_direction][user_arg_2.lower()]['dest']
+                if selected_direction != '':
+                    destination = current_room[selected_direction][user_arg_2.lower()]['dest']
+                else:
+                    print("You were not looking in a direction.")
+                    destination = "Nowhere"
                 if destination != "Nowhere":
                     confirm = (input(destination + ", would you like to enter? Y/N: ")).upper()
                     if confirm == "Y":
