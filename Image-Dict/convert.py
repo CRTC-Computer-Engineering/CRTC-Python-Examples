@@ -10,7 +10,8 @@ for row in range(0, height, 4):
         red, green, blue, alpha = pix[column, row]
         print (str(red) + " " + str(green) + " " + str(blue))
         
-        if blue > 0 and green < blue and red < blue:
+        #if blue > 0 and green < blue and red < blue:
+        if blue < 30 and green < 30 and red < 30:
             output_color = "Blue"
             output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")
 output_file.write("]")
