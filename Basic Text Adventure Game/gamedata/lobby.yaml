@@ -1,5 +1,5 @@
 roommeta:
-    desc: "Welcome to the first room of the game! Thanks so much for playing. There are only a few commands you can use right now, you can LOOK LEFT, RIGHT, AHEAD, or BEHIND, you can INSOECT items, and you can OPEN doors."
+    desc: "Welcome to the first room of the game! Thanks so much for playing. There are only a few commands you can use right now, you can LOOK LEFT, RIGHT, AHEAD, or BEHIND, you can INSPECT things, and you can OPEN doors."
     inspect: "The room is simple and undecoreated, somebody should tell the game designer to add stuff"
 items:
     blueKey:
@@ -17,7 +17,7 @@ left:
         dest: "Nowhere"
 right:
     desc: "You see a simple wooden door and nothing else."
-    door: 
+    door:
         inspect: "Its a simple wooden door, your inspection reveals nothing more about it"
         dest: "It apears this door leads to newroom"
         path: "gamedata/newroom.yaml"
@@ -25,6 +25,6 @@ behind:
     desc: "There is nothing behind you but wall"
 ahead:
     desc: "You see a simple wooden door and nothing else."
-    door: 
+    door:
         inspect: "A simple wooden door, you're not sure where it leads"
         dest: "Nowhere"
