@@ -7,3 +7,9 @@ behind:
         inspect: "A simple wooden door, it leads to the lobby"
         dest: "It apears this door leads to the lobby"
         path: "gamedata/lobby.yaml"
+right:
+    desc: "look! there is a dook, you wonder where it goes"
+    door:
+        inspect: "this might be a door"
+        dest: "the light are off! you can't see athing. who flipen turn of the light!" 
+        path: "gamedata/alvinsroomdesign.yaml"
