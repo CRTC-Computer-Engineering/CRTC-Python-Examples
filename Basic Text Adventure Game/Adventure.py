@@ -27,7 +27,7 @@ def save_data(filepath, data):
     """Dumps data to a yaml"""
     with open(filepath, "w") as file_desc:
         yaml.dump(data, file_desc)
-    
+
 def main_menu():
     while(True):
         print("Welcome to the main menu\n[N] to start a new game, [L] to load an old one.")
@@ -60,18 +60,18 @@ def save_userdata(data_type, data):
             save_data(current_user, current_user_data)
 
 if __name__ == "__main__": # If this is the main file
-    current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room 
+    current_room = enter_room(current_yaml) # fill current_room with all the room data of the current room
     main_menu()
     print (current_room['roommeta']['desc']) # give us the desc of that room
     while(True):
-    
+
         user_command = (input(":")).upper()
         user_arg_1 = user_command.split()[0]
         try:
             user_arg_2 = user_command.split()[1]
         except:
             user_arg_2 = ""
-        
+
         if (fuzzy_words(user_arg_1, ["LOOK"])):
             if (fuzzy_words(user_arg_2, ["LEFT"])):
                 selected_direction = 'left'
@@ -79,21 +79,21 @@ if __name__ == "__main__": # If this is the main file
                     print(current_room['left']['desc'])
                 except:
                     print("There is nothing notible to your left")
-                    
+
             elif (fuzzy_words(user_arg_2, ["RIGHT"])):
                 selected_direction = 'right'
                 try:
                     print(current_room['right']['desc'])
                 except:
                     print("There is nothing notible to your right")
-                    
+
             elif (fuzzy_words(user_arg_2, ["AHEAD", "FORWARD"])):
                 selected_direction = 'ahead'
                 try:
                     print(current_room['ahead']['desc'])
                 except:
                     print("There is nothing ahead of you")
-                
+
             elif (fuzzy_words(user_arg_2, ["BEHIND", "BACK"])):
                 selected_direction = 'behind'
                 try:
@@ -111,6 +111,7 @@ if __name__ == "__main__": # If this is the main file
             except:
                 print("This object cannot be inspected") # Tell the user that there is no information for that selected object
         elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB", "TAKE"])):
+            print(current_room[selected_direction][user_arg_2.lower()]['desc'])
             print("pickup")
         elif (fuzzy_words(user_arg_1, ["EXIT", "MENU"])):
             save_userdata("current_room", current_yaml) # Save current room
