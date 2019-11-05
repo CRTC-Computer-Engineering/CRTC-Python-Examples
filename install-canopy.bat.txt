@@ -1,0 +1,1 @@
+msiexec /qr /lv*x canopy-msi.log /i canopy-2.1.9.win-x86_64-cp27 ALLUSERS=1 SETUP_MANAGED_COMMON_INSTALL="C:\Program Files\Enthought"
