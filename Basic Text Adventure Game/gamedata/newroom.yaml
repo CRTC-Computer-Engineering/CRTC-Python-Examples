@@ -1,6 +1,9 @@
 roommeta:
     desc: "Its a basic empty room."
     inspect: "There's nothing in this room."
+left:
+    dest: "this leads to travis room"
+    path: "gamedata/travisroom.yaml"
 behind:
     desc: "You see a basic wooden door"
     door: 

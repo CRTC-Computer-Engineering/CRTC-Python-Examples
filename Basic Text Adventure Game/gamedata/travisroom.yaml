@@ -1,0 +1,30 @@
+roommeta:
+    desc: "Welcome to Travis Special room! There are three new commands you can use: you can LOOK UP, DOWN, and FORWARD"
+    inspect: "The room is large and has a small fountain in the middle. The fountain doesn't work."
+items:
+    fountain:
+        name: "A fountain"
+        inspect: "The fountain has some water in it. The fountain doesn't work."
+    gameManual:
+        name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
+        inspect: "This manual is almost useful for nothing!"
+left:
+    desc: "You see some grafitti."
+up:
+    desc: "you see a wet ceiling. you wonder: why is it wet?"
+down:
+    desc: "You see your ugly feet."
+right:
+    desc: "You see a locked door"
+    door: 
+        inspect: "The door has a wooden beam running across it with a simple chain holding it down. Maybe you can break it."
+        dest: "It apears this door leads to a new room"
+        # path: "gamedata/newroom.yaml"
+behind:
+    desc: "There is the door that leads back to the lobby."
+    dest: "This leads back to the lobby"
+    path: "gamedata/lobby.yaml"
+forward:
+    desc: "You can't see past the fountain."
+    inspect: "its a fountain"
+    dest: "Nowhere"
