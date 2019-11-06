@@ -4,6 +4,7 @@ roommeta:
 left:
     desc: "you see a door"
     door:
+        inspect: "The door is wet."
         dest: "this leads to travis room"
         path: "gamedata/travisroom.yaml"
 behind:

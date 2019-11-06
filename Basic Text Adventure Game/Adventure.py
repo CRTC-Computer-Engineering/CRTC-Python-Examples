@@ -93,7 +93,21 @@ if __name__ == "__main__": # If this is the main file
                     print(current_room['ahead']['desc'])
                 except:
                     print("There is nothing ahead of you")
-
+            
+            elif (fuzzy_words(user_arg_2, ["UP", "ABOVE"])):
+                selected_direction = 'up'
+                try:
+                    print(current_room['up']['desc'])
+                except:
+                    print("There is nothing above you")
+                    
+            elif (fuzzy_words(user_arg_2, ["DOWN", "BELOW"])):
+                selected_direction = 'down'
+                try:
+                    print(current_room['down']['desc'])
+                except:
+                    print("There is nothing below you")
+            
             elif (fuzzy_words(user_arg_2, ["BEHIND", "BACK"])):
                 selected_direction = 'behind'
                 try:
