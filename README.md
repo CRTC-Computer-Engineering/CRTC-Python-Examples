@@ -1,4 +1,7 @@
-# CRTC-Python-Examples
+# DO NOT COPY CODE TO COMPLETE PROBLEMS, PLEASE ONLY USE AS EXAMPLE CODE
+## PLEASE DO NOT UPLOAD CODE BEFORE 2.15.X
+
+### CRTC-Python-Examples
 A repo for adding in your example python code to assist or impress others! :3
 
 Rules for adding:
