@@ -1,30 +1,32 @@
 roommeta:
-    desc: "Welcome to Travis Special room! There are three new commands you can use: you can LOOK UP, DOWN, and FORWARD"
-    inspect: "The room is large and has a small fountain in the middle. The fountain doesn't work."
+    desc: "This is Travis Room. In this room you can also LOOK UP and LOOK DOWN"
+    inspect: "Apon further inspection, the room opens up to your left and right more than forward."
 items:
-    fountain:
-        name: "A fountain"
-        inspect: "The fountain has some water in it. The fountain doesn't work."
+    emptyBottle:
+        name: "An empty bottle"
+        inspect: "The bottle can hold liquid. It's clear."
     gameManual:
         name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
         inspect: "This manual is almost useful for nothing!"
-left:
-    desc: "You see some grafitti."
-up:
-    desc: "you see a wet ceiling. you wonder: why is it wet?"
 down:
-    desc: "You see your ugly feet."
+    desc: "You look down. You see an empty bottle on the ground."
+    item:
+        emptyBottle: 1
+left:
+    desc: "You turn to the left and see a wall."
+    
 right:
-    desc: "You see a locked door"
-    door: 
-        inspect: "The door has a wooden beam running across it with a simple chain holding it down. Maybe you can break it."
-        dest: "It apears this door leads to a new room"
-        # path: "gamedata/newroom.yaml"
+    desc: "You see a simple wooden door and nothing else."
+    door:
+        inspect: "Its a simple wooden door, your inspection reveals nothing more about it"
+        dest: "It apears this door leads nowhere"
+        path: idk
 behind:
-    desc: "There is the door that leads back to the lobby."
-    dest: "This leads back to the lobby"
-    path: "gamedata/lobby.yaml"
-forward:
-    desc: "You can't see past the fountain."
-    inspect: "its a fountain"
-    dest: "Nowhere"
+    desc: "There is the door that leads back to the previous room."
+    door:
+        inspect: "It is the door leading back to the room you came from."
+        dest: "It appears to go back."
+        path: "gamedata/newroom.yaml"
+up:
+    desc: "You see the ceiling."
+    inspect: "Apon further inspection, you see that the ceiling is gay."
