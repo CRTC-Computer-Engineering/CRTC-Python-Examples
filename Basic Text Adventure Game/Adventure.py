@@ -72,12 +72,12 @@ if __name__ == "__main__": # If this is the main file
         except:
             user_arg_2 = ""
 
-        if (fuzzy_words(user_arg_1, ["LOOK"])):
-            try:
-                print(current_room[user_arg_2.lower()]['desc'])
-                selected_direction = user_arg_2.lower()
+        if (fuzzy_words(user_arg_1, ["LOOK"])): # If the user asks to look 
+            try: # First try and set the direction to the user input
+                print(current_room[user_arg_2.lower()]['desc']) # Print the description
+                selected_direction = user_arg_2.lower() # Set the selected_direction
             except:
-                print("That is not a direction or there is nothing there.")
+                print("That is not a direction or there is nothing there.") # Print error
         elif (fuzzy_words(user_arg_1, ["WHERE", "MAP"])):
             try:
                 print(current_room[selected_direction])
