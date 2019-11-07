@@ -20,7 +20,6 @@ right:
     door:
         inspect: "Its a simple wooden door, your inspection reveals nothing more about it"
         dest: "It apears this door leads nowhere"
-        path: idk
 behind:
     desc: "There is the door that leads back to the previous room."
     door:
