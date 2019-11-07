@@ -20,7 +20,6 @@ right:
     door:
         inspect: "Its a simple wooden door, your inspection reveals nothing more about it"
         dest: "It apears this door leads nowhere"
-        path: idk
 behind:
     desc: "There is the door that leads back to the previous room."
     door:
@@ -28,5 +27,4 @@ behind:
         dest: "It appears to go back."
         path: "gamedata/newroom.yaml"
 up:
-    desc: "You see the ceiling."
-    inspect: "Apon further inspection, you see that the ceiling is gay."
+    desc: "You see the ceiling. you see that the ceiling is gay."
