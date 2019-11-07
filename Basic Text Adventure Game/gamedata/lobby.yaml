@@ -3,15 +3,16 @@ roommeta:
     inspect: "The room is simple and undecoreated, somebody should tell the game designer to add stuff"
 items:
     blueKey:
-        name: "A Blue Key"
+        desc: "A Blue Key"
         inspect: "The key is small and looks blue."
     gameManual:
         name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
         inspect: "This manual is almost useful for nothing!"
 left:
     desc: "You turn to the left and find a wooden door and a small key on the floor, you cannot pick up the key beacuse i did not program that feature yet."
-    item:
-        blueKey: 1
+    key: 
+        name: "blueKey"
+        inspect: "Its a blue key"
     door:
         inspect: "A simple wooden door, you're not sure where it leads"
         dest: "Nowhere"
