@@ -73,47 +73,11 @@ if __name__ == "__main__": # If this is the main file
             user_arg_2 = ""
 
         if (fuzzy_words(user_arg_1, ["LOOK"])):
-            if (fuzzy_words(user_arg_2, ["LEFT"])):
-                selected_direction = 'left'
-                try:
-                    print(current_room['left']['desc'])
-                except:
-                    print("There is nothing notible to your left")
-
-            elif (fuzzy_words(user_arg_2, ["RIGHT"])):
-                selected_direction = 'right'
-                try:
-                    print(current_room['right']['desc'])
-                except:
-                    print("There is nothing notible to your right")
-
-            elif (fuzzy_words(user_arg_2, ["AHEAD", "FORWARD"])):
-                selected_direction = 'ahead'
-                try:
-                    print(current_room['ahead']['desc'])
-                except:
-                    print("There is nothing ahead of you")
-            
-            elif (fuzzy_words(user_arg_2, ["UP", "ABOVE"])):
-                selected_direction = 'up'
-                try:
-                    print(current_room['up']['desc'])
-                except:
-                    print("There is nothing above you")
-                    
-            elif (fuzzy_words(user_arg_2, ["DOWN", "BELOW"])):
-                selected_direction = 'down'
-                try:
-                    print(current_room['down']['desc'])
-                except:
-                    print("There is nothing below you")
-            
-            elif (fuzzy_words(user_arg_2, ["BEHIND", "BACK"])):
-                selected_direction = 'behind'
-                try:
-                    print(current_room['behind']['desc'])
-                except:
-                    print("Missing Data")
+            try:
+                print(current_room[user_arg_2.lower()]['desc'])
+                selected_direction = user_arg_2.lower()
+            except:
+                print("That is not a direction or there is nothing there.")
         elif (fuzzy_words(user_arg_1, ["WHERE", "MAP"])):
             try:
                 print(current_room[selected_direction])
