@@ -2,16 +2,16 @@ roommeta:
     desc: "This is Travis Room. In this room you can also LOOK UP and LOOK DOWN"
     inspect: "Apon further inspection, the room opens up to your left and right more than forward."
 items:
-    emptyBottle:
-        name: "An empty bottle"
+    bottle:
+        name: "A bottle"
         inspect: "The bottle can hold liquid. It's clear."
     gameManual:
         name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
         inspect: "This manual is almost useful for nothing!"
 down:
-    desc: "You look down. You see an empty bottle on the ground."
+    desc: "You look down. You see a bottle on the ground."
     item:
-        emptyBottle: 1
+        bottle: 1
 left:
     desc: "You turn to the left and see a wall."
     
