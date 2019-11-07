@@ -89,8 +89,13 @@ if __name__ == "__main__": # If this is the main file
             except:
                 print("This object cannot be inspected") # Tell the user that there is no information for that selected object
         elif (fuzzy_words(user_arg_1, ["PICKUP", "GRAB", "TAKE"])):
-            print(current_room[selected_direction][user_arg_2.lower()]['desc'])
-            print("pickup")
+            try:
+                pick_item = current_room[selected_direction][user_arg_2.lower()]['name']
+                data = current_room['items'][pick_item]
+                save_userdata('inventory', data)
+                print("You picked up the item")
+            except:
+                print("Item cannot be picked up")
         elif (fuzzy_words(user_arg_1, ["EXIT", "MENU"])):
             save_userdata("current_room", current_yaml) # Save current room
             save_userdata("selected_direction", selected_direction) # Save current direction
