@@ -3,15 +3,16 @@ roommeta:
     inspect: "Apon further inspection, the room opens up to your left and right more than forward."
 items:
     bottle:
-        name: "A bottle"
+        desc: "A bottle"
         inspect: "The bottle can hold liquid. It's clear."
     gameManual:
         name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
         inspect: "This manual is almost useful for nothing!"
 down:
     desc: "You look down. You see a bottle on the ground."
-    item:
-        bottle: 1
+    bottle:
+        name: "bottle"
+        inspect: "Its an empty bottle."
 left:
     desc: "You turn to the left and see a wall."
     
