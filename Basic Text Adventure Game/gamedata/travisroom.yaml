@@ -6,10 +6,10 @@ items:
         desc: "A bottle"
         inspect: "The bottle can hold liquid. It's clear."
     gameManual:
-        name: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
+        desc: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
         inspect: "This manual is almost useful for nothing!"
 down:
-    desc: "You look down. You see a bottle on the ground."
+    desc: "You look down. You see a bottle on the ground. You can INSPECT bottle."
     bottle:
         name: "bottle"
         inspect: "Its an empty bottle."
