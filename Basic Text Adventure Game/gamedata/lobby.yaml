@@ -10,7 +10,7 @@ items:
         gameManual:
             name: Welcome! and thanks for playing this game, INSPECT this manual for more info
             inspect: This manual is almost useful for nothing!
-left:
+west:
     desc: You turn to the left and find a wooden door and a small key on the floor, you cannot pick up the key beacuse i did not program that feature yet.
     key: 
         name: blueKey
@@ -18,15 +18,15 @@ left:
     door:
         inspect: A simple wooden door, you're not sure where it leads
         dest: Nowhere
-right:
+east:
     desc: You see a simple wooden door and nothing else.
     door:
         inspect: Its a simple wooden door, your inspection reveals nothing more about it
         dest: It apears this door leads to newroom
         path: gamedata/newroom.yaml
-behind:
+south:
     desc: There is nothing behind you but wall
-ahead:
+north:
     desc: You see a simple wooden door and nothing else.
     door:
         inspect: A simple wooden door, you're not sure where it leads

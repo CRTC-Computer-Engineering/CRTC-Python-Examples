@@ -1,33 +1,38 @@
 roommeta:
-    desc: "This is Travis Room. In this room you can also LOOK UP and LOOK DOWN"
-    inspect: "Apon further inspection, the room opens up to your left and right more than forward."
+    desc: This is Travis Room. In this room you can also LOOK UP and LOOK DOWN
+    inspect: Apon further inspection, the room opens up to your left and right more than forward.
 items:
     bottle:
-        desc: "A bottle"
-        inspect: "The bottle can hold liquid. It's clear."
+        desc: A bottle
+        inspect: The bottle can hold liquid. It's clear.
     gameManual:
-        desc: "Welcome! and thanks for playing this game, INSPECT this manual for more info"
-        inspect: "This manual is almost useful for nothing!"
+        desc: Welcome! and thanks for playing this game, INSPECT this manual for more info
+        inspect: This manual is almost useful for nothing!
 down:
-    desc: "You look down. You see a bottle on the ground. You can INSPECT bottle."
+    desc: You look down. You see a bottle on the ground. You can INSPECT bottle.
     bottle:
-        name: "bottle"
-        inspect: "Its an empty bottle."
-left:
-    desc: "You turn to the left and see a wall."
+        name: bottle
+        inspect: Its an empty bottle.
+west:
+    desc: You turn to the left and see a wall.
     
-right:
-    desc: "You see a large metal door with strange markings all over it. The door is slightly ajar. you see nothing else."
+east:
+    desc: You see a large metal door with strange markings all over it. The door is slightly ajar. you see nothing else.
     door:
-        inspect: "Its a large metal door with strange markings all over it, your inspection reveals nothing more about it"
-        dest: "This leads to a secret room"
-        path: "gamedata/secretroom.yaml"
-behind:
-    desc: "There is the door that leads back to the previous room."
+        inspect: Its a large metal door with strange markings all over it, your inspection reveals nothing more about it
+        dest: This leads to a secret room
+        path: gamedata/secretroom.yaml
+south:
+    desc: There is the door that leads back to the previous room.
     door:
-        inspect: "It is the door leading back to the room you came from."
-        dest: "It appears to go back."
-        path: "gamedata/newroom.yaml"
+        inspect: It is the door leading back to the room you came from.
+        dest: It appears to go back.
+        path: gamedata/newroom.yaml
 up:
-    desc: "You see the ceiling. you see that the ceiling is gay."
-    
+    desc: You see the ceiling. you see that the ceiling is gay.
+north:
+    desc: there is a door with a window
+    door:
+        inspect: you look through the window. There are a few snakes in the next room.
+        dest: This leads to another room
+        path: gamedata/snakeroom.yaml
