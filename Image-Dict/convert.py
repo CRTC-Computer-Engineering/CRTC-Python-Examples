@@ -9,12 +9,18 @@ resolution = 2
 
 for row in range(0, height, resolution):
     for column in range(0, width, resolution):
-        red, green, blue, alpha = pix[column, row]
+        try:
+            red, green, blue, alpha = pix[column, row]
+        except:
+            red, green, blue = pix[column, row]
         print (str(red) + " " + str(green) + " " + str(blue))
         
         #if blue > 0 and green < blue and red < blue:
         if blue < 100 and green > 30 and red < 100:
             output_color = "Green"
+            output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")
+        elif blue < 30 and green < 30 and red < 30:
+            output_color = "Black"
             output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")
         elif blue < 30 and green > 30 and red > 30:
             output_color = "Yellow"
