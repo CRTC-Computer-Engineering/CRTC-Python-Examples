@@ -16,10 +16,10 @@ left:
     desc: "You turn to the left and see a wall."
     
 right:
-    desc: "You see a simple wooden door and nothing else."
+    desc: "You see a large metal door with strange markings all over it. The door is slightly ajar. you see nothing else."
     door:
-        inspect: "Its a simple wooden door, your inspection reveals nothing more about it"
-        dest: "It apears this door leads nowhere"
+        inspect: "Its a large metal door with strange markings all over it, your inspection reveals nothing more about it"
+        dest: "gamedata/secretroom.yaml"
 behind:
     desc: "There is the door that leads back to the previous room."
     door:
@@ -28,3 +28,4 @@ behind:
         path: "gamedata/newroom.yaml"
 up:
     desc: "You see the ceiling. you see that the ceiling is gay."
+    
