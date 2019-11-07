@@ -20,7 +20,8 @@ right:
     desc: "You see a large metal door with strange markings all over it. The door is slightly ajar. you see nothing else."
     door:
         inspect: "Its a large metal door with strange markings all over it, your inspection reveals nothing more about it"
-        dest: "gamedata/secretroom.yaml"
+        dest: "This leads to a secret room"
+        path: "gamedata/secretroom.yaml"
 behind:
     desc: "There is the door that leads back to the previous room."
     door:
