@@ -1,5 +1,5 @@
 roommeta:
-    desc: Welcome to the first room of the game! Thanks so much for playing. There are only a few commands you can use right now, you can LOOK LEFT, RIGHT, AHEAD, or BEHIND, you can INSPECT things, and you can OPEN doors.
+    desc: "Welcome to the first room of the game! Thanks so much for playing. There are only a few commands you can use right now, you can LOOK NORTH, EAST, SOUTH, or WEST, INSPECT things, OPEN doors, TAKE things, or USE things."
     inspect: The room is simple and undecoreated, somebody should tell the game designer to add stuff
 items:
     blueKey:
