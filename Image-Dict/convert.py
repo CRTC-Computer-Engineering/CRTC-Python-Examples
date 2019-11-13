@@ -8,8 +8,8 @@ output_file = open("output.py", "a")
 output_file.write("image_list = [")
 resolution = int(input("Set your res (default is 2): "))
 
-list_of_colors = [[255,0,0],[0,255,0],[0,0,255],[255,255,255],[0,0,0],[255,255,0],[0,255,255],[255,0,255],[100,100,100]]
-list_of_names = ["Red", "Green", "Blue", "White", "Black","Yellow","Cyan","Purple","Grey"]
+list_of_colors = [[0,0,0],[0,0,255],[150,75,0],[0,255,255],[255,215,0],[128,128,128],[0,255,0],[75,0,130],[255,165,0],[251,96,127],[160,32,240],[255,0,0],[143,0,255],[255,255,255],[250,255,0]]
+list_of_names = ["black", "blue",   "brown",   "cyan",     "gold",     "gray",       "green",  "indigo",  "orange",   "pink",      "purple",    "red",    "violet",   "white",      "yellow"]
 
 def closest(colors,color):
     colors = np.array(colors) # all the colors are now an array
@@ -39,7 +39,7 @@ for row in range(0, height, resolution):
             index_in_array = index_in_array + 1
             
         print(output_color)
-        if(output_color != "White"):
+        if(output_color != "white"):
             output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")
 output_file.write("""]
 
