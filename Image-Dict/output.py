@@ -8,11 +8,19 @@ if shuffleDraw:
 
 speed(0) # Go at max speed
 resolution = 2 # Set to res of image
+current_progress = 0.0
+last_progress = 0
 for current_pixel in image_list: # For every pixel
     split_pixel = current_pixel.split() # split into values on " "
     x = split_pixel[0] # The first value is x
     y = 400 - int(split_pixel[1]) # The second value is y
     selectColor = split_pixel[2] # The third value is color
+    
+    current_progress = current_progress - 1 # Calculate Percentage
+    percentage = (100 * float(current_progress)/float(len(image_list))) * -1
+    if(last_progress != int(percentage)):
+        print("Progress: " + str(int(percentage)) + "%")
+        last_progress = int(percentage)
     
     penup() # Bring up the cursor
     setposition(int(x) - 200, int(y) - 200) # Go to the pixel location (tranformed by 200)
