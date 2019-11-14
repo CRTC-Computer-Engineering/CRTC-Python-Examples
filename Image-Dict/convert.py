@@ -2,13 +2,6 @@ from PIL import Image
 import numpy as np
 import os
 
-selected_image = Image.open('image.png') # Could be upgraded to be an input
-pix = selected_image.load() # Load the image
-width, height = selected_image.size # Get the width and height
-output_file = open("output.py", "a") # Set the output file
-output_file.write("image_list = [") # Write the first char
-resolution = int(input("Set your res (default is 2): ")) # Ask the user for the res
-
 if os.path.exists("output.py"): # If an existing file exists
     try:
         os.remove("output.py") # Remove it
@@ -16,6 +9,13 @@ if os.path.exists("output.py"): # If an existing file exists
         "Unable to remove file!"
 else: # Otheriwise
     print("Creating empty file") # We're good!
+
+selected_image = Image.open('image.png') # Could be upgraded to be an input
+pix = selected_image.load() # Load the image
+width, height = selected_image.size # Get the width and height
+output_file = open("output.py", "a") # Set the output file
+output_file.write("image_list = [") # Write the first char
+resolution = int(input("Set your res (default is 2): ")) # Ask the user for the res
 
 list_of_colors = [[0,0,0],[0,0,255],[150,75,0],[0,255,255],[255,215,0],[128,128,128],[0,255,0],[75,0,130],[255,165,0],[251,96,127],[160,32,240],[255,0,0],[143,0,255],[255,255,255],[250,255,0]]
 list_of_names = ["black", "blue",   "brown",   "cyan",     "gold",     "gray",       "green",  "indigo",  "orange",   "pink",      "purple",    "red",    "violet",   "white",      "yellow"]
