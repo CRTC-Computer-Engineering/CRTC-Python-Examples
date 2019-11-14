@@ -62,6 +62,7 @@ speed(0) # Go at max speed
 resolution = """ + str(resolution) + """ # Set to res of image
 current_progress = 0.0
 last_progress = 0
+print("Starting...")
 for current_pixel in image_list: # For every pixel
     split_pixel = current_pixel.split() # split into values on " "
     x = split_pixel[0] # The first value is x
@@ -79,6 +80,6 @@ for current_pixel in image_list: # For every pixel
     pendown() # Begin drawing
     color(selectColor) # Set the color
     pensize(resolution * 2) # Set the pen size
-    forward(resolution) # Go forward
+    forward(1) # Go forward
 print("Done") # Done!
 """)
