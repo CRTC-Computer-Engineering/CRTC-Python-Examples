@@ -10,9 +10,12 @@ output_file.write("image_list = [") # Write the first char
 resolution = int(input("Set your res (default is 2): ")) # Ask the user for the res
 
 if os.path.exists("output.py"): # If an existing file exists
-  os.remove("output.py") # Remove it
+    try:
+        os.remove("output.py") # Remove it
+    except:
+        "Unable to remove file!"
 else: # Otheriwise
-  print("Creating empty file") # We're good!
+    print("Creating empty file") # We're good!
 
 list_of_colors = [[0,0,0],[0,0,255],[150,75,0],[0,255,255],[255,215,0],[128,128,128],[0,255,0],[75,0,130],[255,165,0],[251,96,127],[160,32,240],[255,0,0],[143,0,255],[255,255,255],[250,255,0]]
 list_of_names = ["black", "blue",   "brown",   "cyan",     "gold",     "gray",       "green",  "indigo",  "orange",   "pink",      "purple",    "red",    "violet",   "white",      "yellow"]
@@ -44,7 +47,7 @@ for row in range(0, height, resolution):
                 output_color = list_of_names[index_in_array]
             index_in_array = index_in_array + 1
             
-        print(output_color)
+        print("Current Color: " + str(output_color) + ", Current line: " + str(row) + "/" + str(height) + "   ", end="\r")
         if(output_color != "white"):
             output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")
 output_file.write("""]
