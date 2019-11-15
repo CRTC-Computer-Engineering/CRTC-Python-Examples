@@ -28,25 +28,28 @@ def closest(colors,color):
     smallest_distance = colors[index_of_smallest] # Get that distance
     return smallest_distance #return the closest color
 
-for row in range(0, height, resolution):
-    for column in range(0, width, resolution):
+def get_RGB(m_column, m_row):
+    try:
         try:
-            red, green, blue, alpha = pix[column, row]
+            red, green, blue, alpha = pix[m_column, m_row]
         except:
-            red, green, blue = pix[column, row]
-        #print (str(red) + " " + str(green) + " " + str(blue))
-        
-        #print([red, green, blue])
-        closest_color = ((closest(list_of_colors, [red,green,blue])).tolist())[0]
-        #print(closest_color)
-        
-        index_in_array = 0
-        for i in list_of_colors:
-            #print(i)
-            if i == closest_color:
-                output_color = list_of_names[index_in_array]
-            index_in_array = index_in_array + 1
-            
+            red, green, blue = pix[m_column, m_row]
+    except:
+        red, green, blue = [255, 255, 255]
+    rounded_rgb = ((closest(list_of_colors, [red,green,blue])).tolist())[0]
+    
+    index_in_array = 0
+    for i in list_of_colors:
+        #print(i)
+        if i == rounded_rgb:
+            return_color = list_of_names[index_in_array]
+        index_in_array = index_in_array + 1
+    return return_color
+
+for row in range(0, height, resolution):
+    for column in range(0, width, resolution):  
+        output_color = get_RGB(column, row)
+    
         print("Current Color: " + str(output_color) + ", Current line: " + str(row) + "/" + str(height) + "   ", end="\r")
         if(output_color != "white"):
             output_file.write("\"" + str(column) + " " + str(row) + " " + output_color + "\", ")

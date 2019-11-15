@@ -28,5 +28,5 @@ for current_pixel in image_list: # For every pixel
     pendown() # Begin drawing
     color(selectColor) # Set the color
     pensize(resolution * 2) # Set the pen size
-    forward(resolution) # Go forward
+    forward(1) # Go forward
 print("Done") # Done!
