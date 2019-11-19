@@ -27,12 +27,17 @@ async def on_message(message): #When a message comes in
 
     if "cool beans" in content.strip(): # if in the string content, exists "cool beans"
         time.sleep(2) # Wait a minute 
+        print("Yeah that was pretty cool beans")
         await channel.send("Cool Beans") # using await so we sync with discord API, send cool beans ASAP
 
     if "define the word is" in content.strip():
-        print("doot")
+        print("Reboot called by " + str(user))
         await channel.send("Rebooted")
         restart_program() # call function
+    
+    if ":0" in content.strip():
+        print(":0")
+        await channel.send(":0")
 
 with open("auto_joe.json", "r") as f:
     robot_data = json.load(f)
