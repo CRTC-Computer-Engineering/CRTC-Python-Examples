@@ -8,6 +8,8 @@ import json
 
 g = git.cmd.Git('~/discord')
 
+with open("auto_joe_responses.json", "r") as f: # Load all the responses
+    responses = json.load(f)
 
 def restart_program(): # def defines a function, this one in particular restarts the program
     #g.pull() # Would pull a new version from github if in a git repo
@@ -25,19 +27,15 @@ async def on_message(message): #When a message comes in
     if user == client.user: # If the user is the robot itself
         return # dont say anything in response to something the robot says
 
-    if "cool beans" in content.strip(): # if in the string content, exists "cool beans"
-        time.sleep(2) # Wait a minute 
-        print("Yeah that was pretty cool beans")
-        await channel.send("Cool Beans") # using await so we sync with discord API, send cool beans ASAP
+    for key in responses:
+        if key.upper() in (content.strip()).upper(): # if in the string content, exists "cool beans"
+            print(responses[key])
+            await channel.send(responses[key]) # using await so we sync with discord API, send cool beans ASAP
 
     if "define the word is" in content.strip():
         print("Reboot called by " + str(user))
         await channel.send("Rebooted")
         restart_program() # call function
-    
-    if ":0" in content.strip():
-        print(":0")
-        await channel.send(":0")
 
 with open("auto_joe.json", "r") as f:
     robot_data = json.load(f)
