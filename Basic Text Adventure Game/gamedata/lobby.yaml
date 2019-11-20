@@ -31,3 +31,8 @@ north:
     door:
         inspect: A simple wooden door, you're not sure where it leads
         dest: Nowhere
+down:
+    desc: there is the game manual on the ground. use INSPECT MANUAL.
+    gameManual:
+        name: gameManual
+        inspect: This manual is almost useful for nothing!

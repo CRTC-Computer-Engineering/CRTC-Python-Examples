@@ -1,0 +1,23 @@
+roommeta:
+    desc: It is a wooden house in the minecraft room.
+items:
+    gameManual:
+        gameManual:
+            desc: Welcome! and thanks for playing this game, INSPECT this manual for more info
+            inspect: This manual is almost useful for nothing!
+down:
+    desc: There is a nice looking oak wood floor. There is a trapdoor in the corner leading down.
+    door:
+        dest: it is a trapdoor that leads under the floor
+        inspect: it seems to go down very far.
+        path: Unknown
+west:
+    desc: You can see outside through a large glass window. You can see a decaying tree outside.
+east:
+    desc: There is a table with a few tools, a furnace with some food cooking in it, and a record player.
+north:
+    desc: "There is a closed door labelled: stairs."
+    door:
+        dest: There are stairs behind the door. They lead upstairs
+        inspect: The door is unlocked and goes upstairs.
+        path: Unknown
