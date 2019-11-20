@@ -27,10 +27,10 @@ async def on_message(message): #When a message comes in
     if user == client.user: # If the user is the robot itself
         return # dont say anything in response to something the robot says
 
-    for key in responses:
-        if key.upper() in (content.strip()).upper(): # if in the string content, exists "cool beans"
-            print(responses[key])
-            await channel.send(responses[key]) # using await so we sync with discord API, send cool beans ASAP
+    for key in responses: # For all the keys in the loaded dict
+        if key.upper() in (content.strip()).upper(): # if in the string content, exists the content of the key (ignoring uppercase)
+            print(responses[key]) # Log the update
+            await channel.send(responses[key]) # using await so we sync with discord API, send the message ASAP
 
     if "define the word is" in content.strip():
         print("Reboot called by " + str(user))
