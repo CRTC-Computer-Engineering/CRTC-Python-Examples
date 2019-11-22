@@ -1,6 +1,6 @@
 def calculate_area(side_length = 10):
-    print side_length
-    print side_length * side_length
+    print "Side length: " + str(side_length)
+    print "The area of a square with sides of length " + str(side_length) + " is " + str(side_length * side_length)
 
 user_length = int(input("Enter side length: "))
 
