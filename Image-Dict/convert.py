@@ -17,7 +17,7 @@ output_file = open("output.py", "a") # Set the output file
 output_file.write("image_list = [") # Write the first char
 resolution = int(input("Set your res (default is 2): ")) # Ask the user for the res
 
-list_of_colors = [[0,0,0],[0,0,255],[165,42,42],[0,255,255],[255,215,0],[128,128,128],[0,128,0],[75,0,130],[255,165,0],[255,192,203],128,0,128],[255,0,0],[238,130,238],[255,255,255],[250,255,0]]
+list_of_colors = [[0,0,0],[0,0,255],[165,42,42],[0,255,255],[255,215,0],[128,128,128],[0,128,0],[75,0,130],[255,165,0],[255,192,203],[128,0,128],[255,0,0],[238,130,238],[255,255,255],[250,255,0]]
 list_of_names = ["black", "blue",   "brown",   "cyan",     "gold",     "gray",       "green",  "indigo",  "orange",   "pink",      "purple",    "red",    "violet",   "white",      "yellow"]
 
 def closest(colors,color):
