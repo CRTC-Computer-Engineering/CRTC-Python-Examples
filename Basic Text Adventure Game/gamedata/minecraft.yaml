@@ -1,0 +1,42 @@
+roommeta:
+    desc: Dude, it's literally just minecraft.
+    inspect: "It looks like a new minecraft world! Advancement made: Opening Inventory"
+items:
+    stick:
+        stick:
+            desc: A stick! You took it right off of the tree.
+            inspect: It is a sturdy stick. It seems malleable but you cannot break it.
+    seed:
+        seed:
+            desc: A seed. You foraged it from the grass.
+            inspect: It is a wheat seed. It is dry.
+    gameManual:
+        gameManual:
+            desc: Welcome! and thanks for playing this game, INSPECT this manual for more info
+            inspect: This manual is almost useful for nothing!
+down:
+    desc: You look down and see meter long grass blocks. A few of them have grass. you see a SEED.
+    seed:
+        name: seed
+        inspect: It is a wheat seed. It is dry.
+west:
+    desc: you look left. The land seems to go on forever in a cascade of valleys and forests.
+east:
+    desc: You see a wooden house. It is a simple design will large windows. There is a wooden door with slits. 
+    door:
+        dest: This leads to someones wooden house
+        inspect: You inspect the door. You see a few marks that look like arrows went through the door.
+        path: 
+north:
+    desc: you look ahead and see a decaying tree. There are a few sticks on the ground surrounding it. One stick looks healthy.
+    stick:
+        name: stick
+        inspect: It is a sturdy stick. It seems malleable but you cannot break it.
+south:
+    desc: There is the door you came in. It leads back to the secret room.
+    door:
+        inspect: You try to focus on the details of the door but they seem to disappear. The door seems ethereal.
+        dest: It appears to go back to the secret room
+        path: gamedata/secretroom.yaml
+up:
+    desc: You look into the sky. There is a square sun and clouds made of rectangles.
